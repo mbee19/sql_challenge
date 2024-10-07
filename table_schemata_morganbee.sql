@@ -1,11 +1,14 @@
 -- Data Engineering
 
---DROP TABLE IF EXISTS titles;
---DROP TABLE IF EXISTS dept_emp;
---DROP TABLE IF EXISTS dept_manager;
---DROP TABLE IF EXISTS departments;
---DROP TABLE IF EXISTS salaries;
---DROP TABLE IF EXISTS employees;
+
+/*
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS departments;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS titles;
+*/
 
 CREATE TABLE titles(
 	title_id VARCHAR(5),
@@ -41,7 +44,7 @@ CREATE TABLE dept_emp(
 CREATE TABLE dept_manager(
 	dept_no VARCHAR(4) NOT NULL,
 	emp_no INTEGER NOT NULL,
-	PRIMARY KEY (dept_no, emp_no), --Composite Key
+	PRIMARY KEY (dept_no),
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
